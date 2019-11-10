@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">HospitalApp</string>
+    <string name="search_for_a_hospital">Search for a Hospital</string>
+    <string name="drug_drug_inturruption">Drug-Drug inturruption</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="confirm">Confirm</string>
+</resources>
