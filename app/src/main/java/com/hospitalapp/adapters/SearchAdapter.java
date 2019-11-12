@@ -62,7 +62,7 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.Holder> im
                 else {
                     list = new ArrayList<>();
                 for (Hospital hospital : total) {
-                    if (s.toLowerCase().contains(hospital.getName()) || s.toLowerCase().contains(hospital.getAddress())) {
+                    if (s.toLowerCase().contains(hospital.getName().toLowerCase()) || s.toLowerCase().contains(hospital.getAddress().toLowerCase())) {
                     list.add(hospital);
                     }
                 }}
