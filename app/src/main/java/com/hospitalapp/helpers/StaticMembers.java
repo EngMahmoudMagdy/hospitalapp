@@ -14,10 +14,14 @@ import android.widget.Toast;
 
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
+import com.hospitalapp.models.Area;
+import com.hospitalapp.models.Hospital;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.List;
 import java.util.Locale;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -102,6 +106,36 @@ public class StaticMembers {
     public static final String login = "login";
     public static final String verifyPinCode = "user/testpincode";
     public static final String reset = "user/password";
+
+
+    ///////////////////DATA Static///////////////////////
+
+    private static List<Hospital> getAllHospitals()
+    {
+        Area shoubra = new Area("Shoubra",11);
+        List<Hospital> list = new ArrayList<>();
+
+        Hospital hospital = new Hospital("El Khazendara General Hospital",
+                "Cairo",
+                " El Khazendara General Hospital is a huge leading hospital is a huge leading hospital",
+                30.10342045865799,
+                31.319859412193864,
+                shoubra,
+                null);
+        list.add(hospital);
+
+        hospital = new Hospital("Sahel Teaching Hospital", "Cairo", "Sahel Teaching Hospital is a huge leading hospital", 30.085680424211166, 31.24983593309628,shoubra, null);
+        list.add(hospital);
+        shoubra = new Area("Maadi",13);
+        hospital = new Hospital("Kasr El Maadi Hospital - KMH", "Maadi", "Kasr El Maadi Hospital is a huge leading hospital", 29.990517012159287, 31.372307149068774,shoubra, null);
+        list.add(hospital);
+        hospital = new Hospital("Dar El Foad", "October", "Dar El Foad hospital is a huge leading hospital", 13.3555, 13.4555,shoubra, null);
+        list.add(hospital);
+        hospital = new Hospital("Dar El Foad", "October", "Dar El Foad hospital is a huge leading hospital", 13.3555, 13.4555,shoubra, null);
+        list.add(hospital);
+return list;
+    }
+
 
     /////////////////Dates converter/////////////////////
     public static String changeDateFromIsoToView(String dateFrom) {

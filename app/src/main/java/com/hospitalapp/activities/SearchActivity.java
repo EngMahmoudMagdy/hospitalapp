@@ -42,17 +42,7 @@ public class SearchActivity extends AppCompatActivity {
         if (savedInstanceState == null) {
             startActivityForResult(new Intent(this, MapsActivity.class), LOCATION_CODE);
         }
-        list = new ArrayList<>();
-        Hospital hospital = new Hospital("Dar El Foad", "October", "Dar El Foad hospital is a huge leading hospital", 13.3555, 13.4555, null);
-        list.add(hospital);
-        hospital = new Hospital("Dar El Foad", "October", "Dar El Foad hospital is a huge leading hospital", 13.3555, 13.4555, null);
-        list.add(hospital);
-        hospital = new Hospital("Dar El Foad", "October", "Dar El Foad hospital is a huge leading hospital", 13.3555, 13.4555, null);
-        list.add(hospital);
-        hospital = new Hospital("Dar El Foad", "October", "Dar El Foad hospital is a huge leading hospital", 13.3555, 13.4555, null);
-        list.add(hospital);
-        hospital = new Hospital("Dar El Foad", "October", "Dar El Foad hospital is a huge leading hospital", 13.3555, 13.4555, null);
-        list.add(hospital);
+
         adapter = new SearchAdapter(this, list);
         recycler.setAdapter(adapter);
     }

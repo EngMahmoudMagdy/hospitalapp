@@ -6,17 +6,27 @@ public class Hospital {
     private String name , address , description;
     private Double latitude , longitude ;
     private List<String> specializations;
+    private Area area;
 
     public Hospital() {
     }
 
-    public Hospital(String name, String address, String description, Double latitude, Double longitude, List<String> specializations) {
+    public Hospital(String name, String address, String description, Double latitude, Double longitude, Area area,List<String> specializations) {
         this.name = name;
         this.address = address;
         this.description = description;
         this.latitude = latitude;
         this.longitude = longitude;
+        this.area = area;
         this.specializations = specializations;
+    }
+
+    public Area getArea() {
+        return area;
+    }
+
+    public void setArea(Area area) {
+        this.area = area;
     }
 
     public String getName() {
