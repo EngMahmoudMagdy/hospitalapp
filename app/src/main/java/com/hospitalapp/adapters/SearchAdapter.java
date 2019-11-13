@@ -56,13 +56,13 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.Holder> im
         return new Filter() {
             @Override
             protected FilterResults performFiltering(CharSequence constraint) {
-                String s = constraint.toString();
+                String s = constraint.toString().toLowerCase();
                 if (s.isEmpty())
                     list = total;
                 else {
                     list = new ArrayList<>();
                 for (Hospital hospital : total) {
-                    if (s.toLowerCase().contains(hospital.getName().toLowerCase()) || s.toLowerCase().contains(hospital.getAddress().toLowerCase())) {
+                    if (hospital.getName().toLowerCase().contains(s) || hospital.getAddress().toLowerCase().contains(s)) {
                     list.add(hospital);
                     }
                 }}
