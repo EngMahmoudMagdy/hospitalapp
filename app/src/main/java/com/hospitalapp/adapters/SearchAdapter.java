@@ -20,13 +20,20 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
+import static android.view.View.GONE;
+import static android.view.View.VISIBLE;
+
 public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.Holder> implements Filterable {
     private Context context;
     private List<Hospital> list, total;
+    private RecyclerView recyclerView;
+    private TextView empty;
 
-    public SearchAdapter(Context context, List<Hospital> list) {
+    public SearchAdapter(Context context, List<Hospital> list, RecyclerView recyclerView, TextView empty) {
         this.context = context;
         this.list = list;
+        this.recyclerView = recyclerView;
+        this.empty = empty;
         this.total = list;
     }
 
@@ -41,6 +48,8 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.Holder> im
         Hospital hospital = list.get(position);
         holder.name.setText(hospital.getName());
         holder.address.setText(hospital.getAddress());
+        if (hospital.getArea() != null)
+            holder.area.setText(hospital.getArea().getName());
         holder.itemView.setOnClickListener(v -> {
             //TODO details page
         });
@@ -58,14 +67,15 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.Holder> im
             protected FilterResults performFiltering(CharSequence constraint) {
                 String s = constraint.toString().toLowerCase();
                 if (s.isEmpty())
-                    list = total;
+                    list = new ArrayList<>(total);
                 else {
                     list = new ArrayList<>();
-                for (Hospital hospital : total) {
-                    if (hospital.getName().toLowerCase().contains(s) || hospital.getAddress().toLowerCase().contains(s)) {
-                    list.add(hospital);
+                    for (Hospital hospital : total) {
+                        if (hospital.getName().toLowerCase().contains(s) || hospital.getAddress().toLowerCase().contains(s)) {
+                            list.add(hospital);
+                        }
                     }
-                }}
+                }
                 FilterResults filterResults = new FilterResults();
                 filterResults.values = list;
                 return filterResults;
@@ -74,8 +84,24 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.Holder> im
             @Override
             protected void publishResults(CharSequence constraint, FilterResults results) {
                 list = (List<Hospital>) results.values;
+                notifyChanges();
             }
         };
+    }
+
+    public void notifyChanges(List<Hospital> hospitals) {
+        list.clear();
+        list.addAll(hospitals);
+        total.clear();
+        total.addAll(hospitals);
+        notifyChanges();
+    }
+
+    public void notifyChanges() {
+        notifyDataSetChanged();
+        recyclerView.setVisibility(list.isEmpty() ? GONE : VISIBLE);
+        empty.setText(R.string.no_result_found);
+        empty.setVisibility(list.isEmpty() ? VISIBLE : GONE);
     }
 
     class Holder extends RecyclerView.ViewHolder {
@@ -83,10 +109,12 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.Holder> im
         TextView name;
         @BindView(R.id.address)
         TextView address;
+        @BindView(R.id.area)
+        TextView area;
 
         Holder(@NonNull View itemView) {
             super(itemView);
-            ButterKnife.bind(this,itemView);
+            ButterKnife.bind(this, itemView);
         }
     }
 }

@@ -5,13 +5,13 @@ import java.util.List;
 public class Hospital {
     private String name , address , description;
     private Double latitude , longitude ;
-    private List<String> specializations;
+    private List<Specialization> specializations;
     private Area area;
 
     public Hospital() {
     }
 
-    public Hospital(String name, String address, String description, Double latitude, Double longitude, Area area,List<String> specializations) {
+    public Hospital(String name, String address, String description, Double latitude, Double longitude, Area area,List<Specialization> specializations) {
         this.name = name;
         this.address = address;
         this.description = description;
@@ -69,11 +69,11 @@ public class Hospital {
         this.longitude = longitude;
     }
 
-    public List<String> getSpecializations() {
+    public List<Specialization> getSpecializations() {
         return specializations;
     }
 
-    public void setSpecializations(List<String> specializations) {
+    public void setSpecializations(List<Specialization> specializations) {
         this.specializations = specializations;
     }
 }

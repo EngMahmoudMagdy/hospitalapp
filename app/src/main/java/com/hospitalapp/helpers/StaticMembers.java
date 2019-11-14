@@ -16,6 +16,7 @@ import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 import com.hospitalapp.models.Area;
 import com.hospitalapp.models.Hospital;
+import com.hospitalapp.models.Specialization;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -110,32 +111,78 @@ public class StaticMembers {
 
     ///////////////////DATA Static///////////////////////
 
-    private static List<Hospital> getAllHospitals()
-    {
-        Area shoubra = new Area("Shoubra",11);
+    public static List<Hospital> getAllHospitals() {
+        Area shoubra = new Area("Shoubra", 11);
         List<Hospital> list = new ArrayList<>();
+        List<Specialization> specializations = new ArrayList<>(getAllSpec());
 
+        specializations.remove(0);
         Hospital hospital = new Hospital("El Khazendara General Hospital",
                 "Cairo",
                 " El Khazendara General Hospital is a huge leading hospital is a huge leading hospital",
                 30.10342045865799,
                 31.319859412193864,
                 shoubra,
-                null);
+                specializations);
+
+        list.add(hospital);
+        hospital = new Hospital("Sahel Teaching Hospital", "Cairo", "Sahel Teaching Hospital is a huge leading hospital", 30.085680424211166, 31.24983593309628, shoubra, null);
+        list.add(hospital);
+        shoubra = new Area("Maadi", 13);
+        hospital = new Hospital("Kasr El Maadi Hospital - KMH", "Maadi", "Kasr El Maadi Hospital is a huge leading hospital", 29.990517012159287, 31.372307149068774, shoubra, null);
         list.add(hospital);
 
-        hospital = new Hospital("Sahel Teaching Hospital", "Cairo", "Sahel Teaching Hospital is a huge leading hospital", 30.085680424211166, 31.24983593309628,shoubra, null);
+        specializations = new ArrayList<>(getAllSpec());
+        specializations.remove(0);
+        specializations.remove(0);
+        specializations.remove(0);
+        hospital = new Hospital("Spinnies El Maadi Hospital - KMH", "Maadi", "Spinnies El Maadi Hospital is a huge leading hospital", 29.9697417, 31.2877644, shoubra, specializations);
         list.add(hospital);
-        shoubra = new Area("Maadi",13);
-        hospital = new Hospital("Kasr El Maadi Hospital - KMH", "Maadi", "Kasr El Maadi Hospital is a huge leading hospital", 29.990517012159287, 31.372307149068774,shoubra, null);
+
+        specializations = new ArrayList<>(getAllSpec());
+
+        specializations.remove(0);
+        specializations.remove(specializations.size() - 1);
+
+        shoubra = new Area("Misr algadida", 14);
+        hospital = new Hospital("Cleopatra Hospital", "Misr algadida", "Cleopatra hospital is a huge leading hospital", 30.0930807, 31.3276036, shoubra, specializations);
         list.add(hospital);
-        hospital = new Hospital("Dar El Foad", "October", "Dar El Foad hospital is a huge leading hospital", 13.3555, 13.4555,shoubra, null);
+
+        shoubra = new Area("Madinat Nasr", 15);
+        hospital = new Hospital("Dar El Foad", "Madinat Nasr", "Dar El Foad hospital is a huge leading hospital", 30.0678353, 31.3426359, shoubra, null);
         list.add(hospital);
-        hospital = new Hospital("Dar El Foad", "October", "Dar El Foad hospital is a huge leading hospital", 13.3555, 13.4555,shoubra, null);
-        list.add(hospital);
-return list;
+        return list;
     }
 
+    public static List<Area> getAllAreas() {
+        List<Area> list = new ArrayList<>();
+        Area shoubra = new Area("All Areas", -1);
+        list.add(shoubra);
+        shoubra = new Area("Shoubra", 11);
+        list.add(shoubra);
+        shoubra = new Area("Maadi", 13);
+        list.add(shoubra);
+        shoubra = new Area("Misr algadida", 14);
+        list.add(shoubra);
+        shoubra = new Area("Madinat Nasr", 15);
+        list.add(shoubra);
+        return list;
+    }
+
+    public static List<Specialization> getAllSpec() {
+        List<Specialization> list = new ArrayList<>();
+        Specialization shoubra = new Specialization("All Specializations", -1);
+        list.add(shoubra);
+        shoubra = new Specialization("Brain", 11);
+        list.add(shoubra);
+        shoubra = new Specialization("Nose", 13);
+        list.add(shoubra);
+        shoubra = new Specialization("Heart", 14);
+        list.add(shoubra);
+        shoubra = new Specialization("Bones", 15);
+        list.add(shoubra);
+        return list;
+    }
 
     /////////////////Dates converter/////////////////////
     public static String changeDateFromIsoToView(String dateFrom) {
