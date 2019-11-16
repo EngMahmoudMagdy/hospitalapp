@@ -9,4 +9,6 @@
     <string name="filter">Filter</string>
     <string name="area">Area :</string>
     <string name="specialization">Specialization :</string>
+    <string name="plus">+</string>
+    <string name="equal">=</string>
 </resources>
