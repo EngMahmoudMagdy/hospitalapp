@@ -24,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
         searchButton.setOnClickListener(v -> startActivity(new Intent(this,SearchActivity.class)));
+        drugInturruption.setOnClickListener(v -> startActivity(new Intent(this,DrugInterceptionActivity.class)));
 
     }
 }
