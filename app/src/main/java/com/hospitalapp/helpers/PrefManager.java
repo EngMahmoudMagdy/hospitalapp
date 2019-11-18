@@ -4,6 +4,10 @@ import android.content.Context;
 import android.content.SharedPreferences;
 
 import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+
+import java.lang.reflect.Type;
+import java.util.List;
 
 import static com.hospitalapp.helpers.StaticMembers.EMAIL;
 import static com.hospitalapp.helpers.StaticMembers.PASSWORD;
@@ -99,6 +103,27 @@ public class PrefManager {
         String json = new Gson().toJson(o);
         editor.putString(key, json);
         editor.apply();
+    }
+
+    public <T> void setList(String key, List o) {
+        Type listType = new TypeToken<T>() {}.getType();
+
+        editor = pref.edit();
+        String json = new Gson().toJson(o,listType);
+        editor.putString(key, json);
+        editor.apply();
+    }
+
+    public<T> List<T> getList(String key) {
+        Type listType = new TypeToken<T>() {}.getType();
+        try {
+            String json = pref.getString(key, "");
+            if (json.isEmpty())
+                return null;
+            return new Gson().fromJson(json, listType);
+        } catch (Exception e) {
+            return null;
+        }
     }
 
     public Object getObject(String key, Class<?> c) {

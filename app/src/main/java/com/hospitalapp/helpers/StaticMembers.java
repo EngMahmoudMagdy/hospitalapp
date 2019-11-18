@@ -8,6 +8,7 @@ import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.util.DisplayMetrics;
+import android.util.Pair;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Toast;
@@ -16,6 +17,7 @@ import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 import com.hospitalapp.models.Area;
 import com.hospitalapp.models.Hospital;
+import com.hospitalapp.models.Interception;
 import com.hospitalapp.models.Specialization;
 
 import java.text.ParseException;
@@ -92,6 +94,8 @@ public class StaticMembers {
     public static final String MALE = "male";
     public static final String FEMALE = "female";
     public static final int LOCATION_CODE = 5544;
+    public static final String HOSPITALS = "hospitals";
+    public static final String SPEC = "spec";
     private static final String LANGUAGE = "language";
     public static final String EMAIL = "email";
     public static final String PASSWORD = "password";
@@ -181,6 +185,34 @@ public class StaticMembers {
         list.add(shoubra);
         shoubra = new Specialization("Bones", 15);
         list.add(shoubra);
+        return list;
+    }
+
+    public static List<Interception> getAllInterception() {
+        List<Interception> list = new ArrayList<>();
+        Interception interception = new Interception(new Pair<>("Panadol 1", "Panadol 2"), "Hello world! 1 2Hello world! Hello world! \nHello world! Hello world! Hello world! \nHello world! Hello world! Hello world! \nHello world! Hello world! Hello world! \nHello world! Hello world! Hello world! \nHello world! Hello world! Hello world! \nHello world! Hello world! Hello world! \n");
+        list.add(interception);
+        interception = new Interception(new Pair<>("Panadol 2", "Panadol 3"), "Hello world! 2 3 Hello world! Hello world! \nHello world! Hello world! Hello world! \nHello world! Hello world! Hello world! \nHello world! Hello world! Hello world! \nHello world! Hello world! Hello world! \nHello world! Hello world! Hello world! \nHello world! Hello world! Hello world! \n");
+        list.add(interception);
+        interception = new Interception(new Pair<>("Panadol 4", "Panadol 3"), "Hello world! 4 3 Hello world! Hello world! \nHello world! Hello world! Hello world! \nHello world! Hello world! Hello world! \nHello world! Hello world! Hello world! \nHello world! Hello world! Hello world! \nHello world! Hello world! Hello world! \nHello world! Hello world! Hello world! \n");
+        list.add(interception);
+        interception = new Interception(new Pair<>("Panadol 4", "Panadol 2"), "Hello world! 4 2 Hello world! Hello world! \nHello world! Hello world! Hello world! \nHello world! Hello world! Hello world! \nHello world! Hello world! Hello world! \nHello world! Hello world! Hello world! \nHello world! Hello world! Hello world! \nHello world! Hello world! Hello world! \n");
+        list.add(interception);
+        interception = new Interception(new Pair<>("Panadol 1", "Panadol 4"), "Hello world! 1 4 Hello world! Hello world! \nHello world! Hello world! Hello world! \nHello world! Hello world! Hello world! \nHello world! Hello world! Hello world! \nHello world! Hello world! Hello world! \nHello world! Hello world! Hello world! \nHello world! Hello world! Hello world! \n");
+        list.add(interception);
+        return list;
+    }
+
+    public static List<String> getAllDrugs() {
+        List<String> list = new ArrayList<>();
+        String s = "Panadol 1";
+        list.add(s);
+        s = "Panadol 2";
+        list.add(s);
+        s = "Panadol 3";
+        list.add(s);
+        s = "Panadol 4";
+        list.add(s);
         return list;
     }
 

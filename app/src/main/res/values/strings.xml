@@ -9,4 +9,9 @@
     <string name="filter">Filter</string>
     <string name="area">Area :</string>
     <string name="specialization">Specialization :</string>
+    <string name="plus">+</string>
+    <string name="equal">=</string>
+    <string name="drug_1"><![CDATA[Drug 1<font color="#f65828">*</font>]]></string>
+    <string name="drug_2"><![CDATA[Drug 2<font color="#f65828">*</font>]]></string>
+    <string name="no_interception">There is no interception</string>
 </resources>

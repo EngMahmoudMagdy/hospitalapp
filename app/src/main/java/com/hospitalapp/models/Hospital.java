@@ -3,15 +3,16 @@ package com.hospitalapp.models;
 import java.util.List;
 
 public class Hospital {
-    private String name , address , description;
-    private Double latitude , longitude ;
+    private String name, address, description, specializationData;
+    private Double latitude, longitude;
     private List<Specialization> specializations;
     private Area area;
 
     public Hospital() {
+
     }
 
-    public Hospital(String name, String address, String description, Double latitude, Double longitude, Area area,List<Specialization> specializations) {
+    public Hospital(String name, String address, String description, Double latitude, Double longitude, Area area, List<Specialization> specializations) {
         this.name = name;
         this.address = address;
         this.description = description;
@@ -19,6 +20,24 @@ public class Hospital {
         this.longitude = longitude;
         this.area = area;
         this.specializations = specializations;
+    }
+
+    public Hospital(String name, String address, String description, Double latitude, Double longitude,String specializationData, Area area ) {
+        this.name = name;
+        this.address = address;
+        this.description = description;
+        this.specializationData = specializationData;
+        this.latitude = latitude;
+        this.longitude = longitude;
+        this.area = area;
+    }
+
+    public String getSpecializationData() {
+        return specializationData;
+    }
+
+    public void setSpecializationData(String specializationData) {
+        this.specializationData = specializationData;
     }
 
     public Area getArea() {
