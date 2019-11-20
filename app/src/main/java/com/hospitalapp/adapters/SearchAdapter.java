@@ -9,9 +9,11 @@ import android.widget.Filterable;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.fragment.app.FragmentActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.hospitalapp.R;
+import com.hospitalapp.fragments.HospitalDetailsFragment;
 import com.hospitalapp.models.Hospital;
 
 import java.util.ArrayList;
@@ -24,13 +26,13 @@ import static android.view.View.GONE;
 import static android.view.View.VISIBLE;
 
 public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.Holder> implements Filterable {
-    private Context context;
+    private FragmentActivity activity;
     private List<Hospital> list, total;
     private RecyclerView recyclerView;
     private TextView empty;
 
-    public SearchAdapter(Context context, List<Hospital> list, RecyclerView recyclerView, TextView empty) {
-        this.context = context;
+    public SearchAdapter(FragmentActivity activity, List<Hospital> list, RecyclerView recyclerView, TextView empty) {
+        this.activity = activity;
         this.list = list;
         this.recyclerView = recyclerView;
         this.empty = empty;
@@ -40,7 +42,7 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.Holder> im
     @NonNull
     @Override
     public Holder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return new Holder(LayoutInflater.from(context).inflate(R.layout.item_hospital, parent, false));
+        return new Holder(LayoutInflater.from(activity).inflate(R.layout.item_hospital, parent, false));
     }
 
     @Override
@@ -52,6 +54,7 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.Holder> im
             holder.area.setText(hospital.getArea().getName());
         holder.itemView.setOnClickListener(v -> {
             //TODO details page
+            HospitalDetailsFragment.getInstance(hospital).show(activity.getSupportFragmentManager(),"hospital");
         });
     }
 

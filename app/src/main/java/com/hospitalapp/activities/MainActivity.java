@@ -16,6 +16,8 @@ import com.google.android.gms.maps.model.LatLng;
 import com.hospitalapp.R;
 import com.hospitalapp.helpers.PrefManager;
 import com.hospitalapp.helpers.StaticMembers;
+import com.hospitalapp.models.Area;
+import com.hospitalapp.models.Hospital;
 import com.opencsv.CSVReader;
 
 import java.io.File;
@@ -51,26 +53,26 @@ public class MainActivity extends AppCompatActivity {
         drugInturruption.setOnClickListener(v -> startActivity(new Intent(this, DrugInterceptionActivity.class)));
         changeData.setOnClickListener(view -> {
             try {
-                File csvfile = new File(Environment.getExternalStorageDirectory() + "/spec_tagamoa.csv");
+                File csvfile = new File(Environment.getExternalStorageDirectory() + "/maadi.csv");
                 CSVReader reader = new CSVReader(new FileReader(csvfile));
-                List<String> hospitals = new ArrayList<>();
+               /* List<String> hospitals = new ArrayList<>();
                 while ((nextLine = reader.readNext()) != null) {
                     hospitals.add(nextLine[0]);
                 }
-                PrefManager.getInstance(this).setList(StaticMembers.SPEC+12, hospitals);
-               /* List<Hospital> hospitals = new ArrayList<>();
+                PrefManager.getInstance(this).setList(StaticMembers.SPEC+12, hospitals);*/
+                List<Hospital> hospitals = new ArrayList<>();
                 while ((nextLine = reader.readNext()) != null) {
                     LatLng latLng = getLatLngFromExpandedUrl(nextLine[3]);
-                    Log.i("CSV", nextLine[0] + " " + (nextLine[1]) + " "*//* + nextLine[2] + " " *//* + latLng + " ");
+                    Log.i("CSV", nextLine[0] + " " + nextLine[1] + " " + nextLine[2] + " " + latLng + " ");
                     Hospital hospital = new Hospital(nextLine[0],
                             (nextLine[6] != null && !nextLine[6].isEmpty()) ? nextLine[6] + "," + nextLine[4] : nextLine[4],
-                            "",
+                            nextLine[1],
                             latLng.latitude,
                             latLng.longitude, nextLine[2],
                             new Area(nextLine[4], Integer.parseInt(nextLine[5])));
                     hospitals.add(hospital);
                 }
-                PrefManager.getInstance(this).setList(StaticMembers.HOSPITALS, hospitals);*/
+                PrefManager.getInstance(this).setList(StaticMembers.HOSPITALS, hospitals);
             } catch (IOException e) {
                 Log.e("CSV", Objects.requireNonNull(e.getLocalizedMessage()));
                 requestCameraPermission();

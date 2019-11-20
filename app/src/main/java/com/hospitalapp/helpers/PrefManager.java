@@ -114,16 +114,10 @@ public class PrefManager {
         editor.apply();
     }
 
-    public<T> List<T> getList(String key) {
+    public<T> List<T> getList(String key, Class<T> c) {
         Type listType = new TypeToken<T>() {}.getType();
-        try {
-            String json = pref.getString(key, "");
-            if (json.isEmpty())
-                return null;
-            return new Gson().fromJson(json, listType);
-        } catch (Exception e) {
-            return null;
-        }
+        String json = pref.getString(key, "");
+        return StaticMembers.getList(json,c);
     }
 
     public Object getObject(String key, Class<?> c) {

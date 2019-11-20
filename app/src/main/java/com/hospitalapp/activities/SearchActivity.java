@@ -73,8 +73,8 @@ public class SearchActivity extends AppCompatActivity {
         if (savedInstanceState == null) {
             startActivityForResult(new Intent(this, MapsActivity.class), LOCATION_CODE);
         }
-        list = StaticMembers.getAllHospitals();
-        totalList = StaticMembers.getAllHospitals();
+        list = StaticMembers.getAllHospitals(this);
+        totalList = StaticMembers.getAllHospitals(this);
         adapter = new SearchAdapter(this, list, recycler, emptyText);
         recycler.setAdapter(adapter);
         //Add the data to the filter
@@ -86,7 +86,7 @@ public class SearchActivity extends AppCompatActivity {
 
             List<Hospital> hospitals = new ArrayList<>();
             // FILTER Areas first
-            for (Hospital hospital : getAllHospitals()) {
+            for (Hospital hospital : getAllHospitals(this)) {
                 if (selectedAreaId > -1) {
                     if (hospital.getArea().getId() == selectedAreaId) {
                         hospitals.add(hospital);
@@ -101,7 +101,7 @@ public class SearchActivity extends AppCompatActivity {
             // Now we need to remove from hospitals the unselected specialization
             //List will iterate through it one by one
 
-            Iterator itr = hospitals.iterator();
+          /*  Iterator itr = hospitals.iterator();
             while (itr.hasNext()) {
                 Hospital hospital = (Hospital) itr.next();
                 if (selectedSpecId > -1) {
@@ -120,7 +120,7 @@ public class SearchActivity extends AppCompatActivity {
                     //If this hospital doesn't have any specializations, this hospital will be removed from my data
                     else itr.remove();
                 }
-            }
+            }*/
             //Refresh the list
             adapter.notifyChanges(hospitals);
 

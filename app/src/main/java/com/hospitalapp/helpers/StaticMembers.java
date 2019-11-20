@@ -15,11 +15,23 @@ import android.widget.Toast;
 
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+import com.hospitalapp.R;
 import com.hospitalapp.models.Area;
 import com.hospitalapp.models.Hospital;
 import com.hospitalapp.models.Interception;
 import com.hospitalapp.models.Specialization;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.Reader;
+import java.io.StringWriter;
+import java.io.Writer;
+import java.lang.reflect.ParameterizedType;
+import java.lang.reflect.Type;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -115,7 +127,68 @@ public class StaticMembers {
 
     ///////////////////DATA Static///////////////////////
 
-    public static List<Hospital> getAllHospitals() {
+    public static List<Hospital> getAllHospitals(Context context) {
+        InputStream is = context.getResources().openRawResource(R.raw.hospitals);
+        Writer writer = new StringWriter();
+        char[] buffer = new char[1024];
+        try {
+            Reader reader = new BufferedReader(new InputStreamReader(is, "UTF-8"));
+            int n;
+            while ((n = reader.read(buffer)) != -1) {
+                writer.write(buffer, 0, n);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                is.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        String jsonString = writer.toString();
+        return getList(jsonString,Hospital.class);
+    }
+
+    public static <T> ArrayList<T> getList(String s, Class<T> c) {
+        try {
+            if (s.isEmpty())
+                return null;
+            return new Gson().fromJson(s, new ListOfJson<T>(c));
+        } catch (Exception e) {
+            return null;
+        }
+    }
+
+    public static class ListOfJson<T> implements ParameterizedType
+    {
+        private Class<?> wrapped;
+
+        public ListOfJson(Class<T> wrapper)
+        {
+            this.wrapped = wrapper;
+        }
+
+        @Override
+        public Type[] getActualTypeArguments()
+        {
+            return new Type[] { wrapped };
+        }
+
+        @Override
+        public Type getRawType()
+        {
+            return List.class;
+        }
+
+        @Override
+        public Type getOwnerType()
+        {
+            return null;
+        }
+    }
+
+    /*public static List<Hospital> getAllHospitals() {
         Area shoubra = new Area("Shoubra", 11);
         List<Hospital> list = new ArrayList<>();
         List<Specialization> specializations = new ArrayList<>(getAllSpec());
@@ -123,24 +196,23 @@ public class StaticMembers {
         specializations.remove(0);
         Hospital hospital = new Hospital("El Khazendara General Hospital",
                 "Cairo",
-                " El Khazendara General Hospital is a huge leading hospital is a huge leading hospital",
                 30.10342045865799,
                 31.319859412193864,
                 shoubra,
                 specializations);
 
         list.add(hospital);
-        hospital = new Hospital("Sahel Teaching Hospital", "Cairo", "Sahel Teaching Hospital is a huge leading hospital", 30.085680424211166, 31.24983593309628, shoubra, null);
+        hospital = new Hospital("Sahel Teaching Hospital", "Cairo", 30.085680424211166, 31.24983593309628, shoubra, null);
         list.add(hospital);
         shoubra = new Area("Maadi", 13);
-        hospital = new Hospital("Kasr El Maadi Hospital - KMH", "Maadi", "Kasr El Maadi Hospital is a huge leading hospital", 29.990517012159287, 31.372307149068774, shoubra, null);
+        hospital = new Hospital("Kasr El Maadi Hospital - KMH", "Maadi", 29.990517012159287, 31.372307149068774, shoubra, null);
         list.add(hospital);
 
         specializations = new ArrayList<>(getAllSpec());
         specializations.remove(0);
         specializations.remove(0);
         specializations.remove(0);
-        hospital = new Hospital("Spinnies El Maadi Hospital - KMH", "Maadi", "Spinnies El Maadi Hospital is a huge leading hospital", 29.9697417, 31.2877644, shoubra, specializations);
+        hospital = new Hospital("Spinnies El Maadi Hospital - KMH", "Maadi", 29.9697417, 31.2877644, shoubra, specializations);
         list.add(hospital);
 
         specializations = new ArrayList<>(getAllSpec());
@@ -149,15 +221,15 @@ public class StaticMembers {
         specializations.remove(specializations.size() - 1);
 
         shoubra = new Area("Misr algadida", 14);
-        hospital = new Hospital("Cleopatra Hospital", "Misr algadida", "Cleopatra hospital is a huge leading hospital", 30.0930807, 31.3276036, shoubra, specializations);
+        hospital = new Hospital("Cleopatra Hospital", "Misr algadida", 30.0930807, 31.3276036, shoubra, specializations);
         list.add(hospital);
 
         shoubra = new Area("Madinat Nasr", 15);
-        hospital = new Hospital("Dar El Foad", "Madinat Nasr", "Dar El Foad hospital is a huge leading hospital", 30.0678353, 31.3426359, shoubra, null);
+        hospital = new Hospital("Dar El Foad", "Madinat Nasr", 30.0678353, 31.3426359, shoubra, null);
         list.add(hospital);
         return list;
     }
-
+*/
     public static List<Area> getAllAreas() {
         List<Area> list = new ArrayList<>();
         Area shoubra = new Area("All Areas", -1);

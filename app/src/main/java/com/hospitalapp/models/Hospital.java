@@ -1,35 +1,32 @@
 package com.hospitalapp.models;
 
-import java.util.List;
+import java.io.Serializable;
 
-public class Hospital {
-    private String name, address, description, specializationData;
-    private Double latitude, longitude;
-    private List<Specialization> specializations;
+public class Hospital implements Serializable {
+    private String name, address, specializationData, phone;
+    private double latitude, longitude;
     private Area area;
 
     public Hospital() {
 
     }
 
-    public Hospital(String name, String address, String description, Double latitude, Double longitude, Area area, List<Specialization> specializations) {
+    public Hospital(String name, String address, String phone, double latitude, Double longitude, String specializationData, Area area) {
         this.name = name;
         this.address = address;
-        this.description = description;
-        this.latitude = latitude;
-        this.longitude = longitude;
-        this.area = area;
-        this.specializations = specializations;
-    }
-
-    public Hospital(String name, String address, String description, Double latitude, Double longitude,String specializationData, Area area ) {
-        this.name = name;
-        this.address = address;
-        this.description = description;
+        this.phone = phone;
         this.specializationData = specializationData;
         this.latitude = latitude;
         this.longitude = longitude;
         this.area = area;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 
     public String getSpecializationData() {
@@ -64,14 +61,6 @@ public class Hospital {
         this.address = address;
     }
 
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
     public Double getLatitude() {
         return latitude;
     }
@@ -86,13 +75,5 @@ public class Hospital {
 
     public void setLongitude(Double longitude) {
         this.longitude = longitude;
-    }
-
-    public List<Specialization> getSpecializations() {
-        return specializations;
-    }
-
-    public void setSpecializations(List<Specialization> specializations) {
-        this.specializations = specializations;
     }
 }

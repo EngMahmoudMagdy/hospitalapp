@@ -1,6 +1,8 @@
 package com.hospitalapp.models;
 
-public class Area {
+import java.io.Serializable;
+
+public class Area implements Serializable {
     String name;
     int id;
 
