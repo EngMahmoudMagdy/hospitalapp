@@ -5,13 +5,21 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.text.Editable;
+import android.text.Html;
 import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.util.DisplayMetrics;
 import android.util.Pair;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.ArrayAdapter;
+import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
@@ -32,6 +40,7 @@ import java.io.StringWriter;
 import java.io.Writer;
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
+import java.nio.charset.StandardCharsets;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -128,11 +137,18 @@ public class StaticMembers {
     ///////////////////DATA Static///////////////////////
 
     public static List<Hospital> getAllHospitals(Context context) {
-        InputStream is = context.getResources().openRawResource(R.raw.hospitals);
+        String jsonString = readJSONfile(context,R.raw.hospitals);
+        return getList(jsonString,Hospital.class);
+    }
+
+
+    private static String readJSONfile(Context context, int id)
+    {
+        InputStream is = context.getResources().openRawResource(id);
         Writer writer = new StringWriter();
         char[] buffer = new char[1024];
         try {
-            Reader reader = new BufferedReader(new InputStreamReader(is, "UTF-8"));
+            Reader reader = new BufferedReader(new InputStreamReader(is, StandardCharsets.UTF_8));
             int n;
             while ((n = reader.read(buffer)) != -1) {
                 writer.write(buffer, 0, n);
@@ -146,11 +162,9 @@ public class StaticMembers {
                 e.printStackTrace();
             }
         }
-        String jsonString = writer.toString();
-        return getList(jsonString,Hospital.class);
+        return writer.toString();
     }
-
-    public static <T> ArrayList<T> getList(String s, Class<T> c) {
+    static <T> ArrayList<T> getList(String s, Class<T> c) {
         try {
             if (s.isEmpty())
                 return null;
@@ -188,76 +202,20 @@ public class StaticMembers {
         }
     }
 
-    /*public static List<Hospital> getAllHospitals() {
-        Area shoubra = new Area("Shoubra", 11);
-        List<Hospital> list = new ArrayList<>();
-        List<Specialization> specializations = new ArrayList<>(getAllSpec());
-
-        specializations.remove(0);
-        Hospital hospital = new Hospital("El Khazendara General Hospital",
-                "Cairo",
-                30.10342045865799,
-                31.319859412193864,
-                shoubra,
-                specializations);
-
-        list.add(hospital);
-        hospital = new Hospital("Sahel Teaching Hospital", "Cairo", 30.085680424211166, 31.24983593309628, shoubra, null);
-        list.add(hospital);
-        shoubra = new Area("Maadi", 13);
-        hospital = new Hospital("Kasr El Maadi Hospital - KMH", "Maadi", 29.990517012159287, 31.372307149068774, shoubra, null);
-        list.add(hospital);
-
-        specializations = new ArrayList<>(getAllSpec());
-        specializations.remove(0);
-        specializations.remove(0);
-        specializations.remove(0);
-        hospital = new Hospital("Spinnies El Maadi Hospital - KMH", "Maadi", 29.9697417, 31.2877644, shoubra, specializations);
-        list.add(hospital);
-
-        specializations = new ArrayList<>(getAllSpec());
-
-        specializations.remove(0);
-        specializations.remove(specializations.size() - 1);
-
-        shoubra = new Area("Misr algadida", 14);
-        hospital = new Hospital("Cleopatra Hospital", "Misr algadida", 30.0930807, 31.3276036, shoubra, specializations);
-        list.add(hospital);
-
-        shoubra = new Area("Madinat Nasr", 15);
-        hospital = new Hospital("Dar El Foad", "Madinat Nasr", 30.0678353, 31.3426359, shoubra, null);
-        list.add(hospital);
-        return list;
-    }
-*/
     public static List<Area> getAllAreas() {
         List<Area> list = new ArrayList<>();
-        Area shoubra = new Area("All Areas", -1);
+        Area shoubra = new Area("المعادي", 12);
         list.add(shoubra);
-        shoubra = new Area("Shoubra", 11);
+        shoubra = new Area("التجمع", 13);
         list.add(shoubra);
-        shoubra = new Area("Maadi", 13);
-        list.add(shoubra);
-        shoubra = new Area("Misr algadida", 14);
-        list.add(shoubra);
-        shoubra = new Area("Madinat Nasr", 15);
+        shoubra = new Area("مدينة نصر", 14);
         list.add(shoubra);
         return list;
     }
 
-    public static List<Specialization> getAllSpec() {
-        List<Specialization> list = new ArrayList<>();
-        Specialization shoubra = new Specialization("All Specializations", -1);
-        list.add(shoubra);
-        shoubra = new Specialization("Brain", 11);
-        list.add(shoubra);
-        shoubra = new Specialization("Nose", 13);
-        list.add(shoubra);
-        shoubra = new Specialization("Heart", 14);
-        list.add(shoubra);
-        shoubra = new Specialization("Bones", 15);
-        list.add(shoubra);
-        return list;
+    public static List<String> getAllSpec(Context context,int jsonFileRawId) {
+        String jsonString = readJSONfile(context,jsonFileRawId);
+        return getList(jsonString,String.class);
     }
 
     public static List<Interception> getAllInterception() {
@@ -286,6 +244,55 @@ public class StaticMembers {
         s = "Panadol 4";
         list.add(s);
         return list;
+    }
+
+
+
+    public static ArrayAdapter<String> getSpinnerAdapter(List<String> list,Context context) {
+        return getSpinnerAdapter(list, context,true);
+    }
+
+    public static ArrayAdapter<String> getSpinnerAdapter(List<String> list, Context context, boolean hasHint) {
+        return new ArrayAdapter<String>
+                (context, R.layout.item_list_spinner, android.R.id.text1, list) {
+
+            @NonNull
+            @Override
+            public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
+                final View view;
+                final TextView text;
+
+                if (convertView == null) {
+                    view = LayoutInflater.from(getContext()).inflate(R.layout.item_list_spinner, parent, false);
+                } else {
+                    view = convertView;
+                }
+                text = view.findViewById(android.R.id.text1);
+                final String item = getItem(position);
+                text.setText(Html.fromHtml(item));
+                return view;
+            }
+
+            @Override
+            public View getDropDownView(int position, View convertView,
+                                        ViewGroup parent) {
+                View view = super.getDropDownView(position, convertView, parent);
+                TextView tv = view.findViewById(android.R.id.text1);
+                if (hasHint) {
+                    if (position == 0) {
+                        // Set the hint text color gray
+                        tv.setHint(Html.fromHtml(list.get(0)));
+                        tv.setText("");
+                    }
+                }
+                return view;
+            }
+
+            @Override
+            public boolean isEnabled(int position) {
+                return !hasHint || position != 0;
+            }
+        };
     }
 
     /////////////////Dates converter/////////////////////

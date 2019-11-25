@@ -1,6 +1,7 @@
 package com.hospitalapp.fragments;
 
 import android.os.Bundle;
+import android.text.util.Linkify;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,6 +16,9 @@ import com.hospitalapp.R;
 import com.hospitalapp.models.Hospital;
 
 import org.jetbrains.annotations.NotNull;
+
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -47,8 +51,17 @@ public class HospitalDetailsFragment extends DialogFragment {
         name.setText(hospital.getName());
         address.setText(hospital.getAddress());
         area.setText(hospital.getArea().getName());
-        phones.setText(hospital.getPhone());
         spectializations.setText(hospital.getSpecializationData());
+        Pattern p = Pattern.compile("\\d+");
+        Matcher m = p.matcher(hospital.getPhone());
+        while (m.find()) {
+            phones.setText(String.format("%s\n%s", phones.getText(), m.group()));
+        }
+
+        Linkify.TransformFilter filter = (match, url) -> url.replaceAll("/", "");
+
+        Pattern pattern = Pattern.compile("\\+?\\d+");
+        Linkify.addLinks(phones, pattern, "tel:", null, filter);
     }
 
 

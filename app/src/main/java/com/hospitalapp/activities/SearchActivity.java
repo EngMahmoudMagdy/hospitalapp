@@ -5,6 +5,9 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
@@ -12,6 +15,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatSpinner;
 import androidx.appcompat.widget.SearchView;
 import androidx.appcompat.widget.Toolbar;
 import androidx.cardview.widget.CardView;
@@ -40,6 +44,7 @@ import static com.hospitalapp.helpers.StaticMembers.LONG;
 import static com.hospitalapp.helpers.StaticMembers.getAllAreas;
 import static com.hospitalapp.helpers.StaticMembers.getAllHospitals;
 import static com.hospitalapp.helpers.StaticMembers.getAllSpec;
+import static com.hospitalapp.helpers.StaticMembers.getSpinnerAdapter;
 
 public class SearchActivity extends AppCompatActivity {
 
@@ -51,8 +56,8 @@ public class SearchActivity extends AppCompatActivity {
     TextView emptyText;
     @BindView(R.id.areaGroup)
     RadioGroup areaGroup;
-    @BindView(R.id.specGroup)
-    RadioGroup specGroup;
+    @BindView(R.id.specializationSpinner)
+    AppCompatSpinner specializationSpinner;
     @BindView(R.id.filter)
     CardView filter;
     SearchAdapter adapter;
@@ -60,8 +65,11 @@ public class SearchActivity extends AppCompatActivity {
 
     @BindView(R.id.drawer)
     DrawerLayout drawer;
-    int selectedAreaId = -1, selectedSpecId = -1;
-    private String selectedSearchWord = "";
+    int selectedAreaId = -1;
+    String selectedSpecializationName;
+    private String selectedSearchWord = "" , ANY_SPEC = "أي تخصص";
+    private ArrayAdapter<String> specializationAdapter;
+    private List<String> specializationStringList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -91,7 +99,8 @@ public class SearchActivity extends AppCompatActivity {
                     if (hospital.getArea().getId() == selectedAreaId) {
                         hospitals.add(hospital);
                     }
-                } else {
+                }
+                else {
                     //there is no selection of a specific area then Add all the hospitals that were arranged by location for the first time
                     hospitals.addAll(totalList);
                     break;
@@ -101,26 +110,19 @@ public class SearchActivity extends AppCompatActivity {
             // Now we need to remove from hospitals the unselected specialization
             //List will iterate through it one by one
 
-          /*  Iterator itr = hospitals.iterator();
+            Iterator itr = hospitals.iterator();
             while (itr.hasNext()) {
                 Hospital hospital = (Hospital) itr.next();
-                if (selectedSpecId > -1) {
-                    if (hospital.getSpecializations() != null) {
-                        boolean hasThisSpecialization = false;
-                        for (Specialization specialization : hospital.getSpecializations()) {
-                            if (specialization.getId() == selectedSpecId)
-                                hasThisSpecialization = true;
-                        }
-
+                if (!selectedSpecializationName.equals(ANY_SPEC)) {
+                    if (hospital.getSpecializationData() != null) {
                         //If this hospital doesn't have this specialization, the flag will be false and then this hospital will be removed from my data
-                        if (!hasThisSpecialization)
+                        if (!hospital.getSpecializationData().trim().contains(selectedSpecializationName.trim()))
                             itr.remove();
-
                     }
                     //If this hospital doesn't have any specializations, this hospital will be removed from my data
                     else itr.remove();
                 }
-            }*/
+            }
             //Refresh the list
             adapter.notifyChanges(hospitals);
 
@@ -161,26 +163,56 @@ public class SearchActivity extends AppCompatActivity {
 
 
     void updateLayout() {
+        specializationStringList = new ArrayList<>();
+        specializationStringList.add("أي تخصص");
+        specializationAdapter = getSpinnerAdapter(specializationStringList, this);
+        specializationSpinner.setAdapter(specializationAdapter);
+        specializationSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                selectedSpecializationName = specializationStringList.get(position);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+        areaGroup.setOnCheckedChangeListener((radioGroup, i) -> {
+            selectedAreaId = Integer.parseInt((String) radioGroup.findViewById(radioGroup.getCheckedRadioButtonId()).getTag());
+            specializationStringList.clear();
+            specializationStringList.add(ANY_SPEC);
+            switch (selectedAreaId) {
+                case -1:
+                    specializationStringList.addAll(getAllSpec(this, R.raw.spec_maadi));
+                    specializationStringList.addAll(getAllSpec(this, R.raw.spec_nasr));
+                    specializationStringList.addAll(getAllSpec(this, R.raw.spec_tagamoa));
+                    break;
+                case 12:
+                    specializationStringList.addAll(getAllSpec(this, R.raw.spec_maadi));
+                    break;
+                case 13:
+                    specializationStringList.addAll(getAllSpec(this, R.raw.spec_tagamoa));
+                    break;
+                case 14:
+                    specializationStringList.addAll(getAllSpec(this, R.raw.spec_nasr));
+                    break;
+            }
+            specializationAdapter.notifyDataSetChanged();
+        });
         areaGroup.removeAllViews();
+        RadioButton radioButton = (RadioButton) LayoutInflater.from(this).inflate(R.layout.item_radio, null, false);
+        radioButton.setText("كل المناطق");
+        radioButton.setTag("-1");
+        areaGroup.addView(radioButton);
+        radioButton.setChecked(true);
         for (Area area : getAllAreas()) {
-            RadioButton radioButton = (RadioButton) LayoutInflater.from(this).inflate(R.layout.item_radio, null, false);
+            radioButton = (RadioButton) LayoutInflater.from(this).inflate(R.layout.item_radio, null, false);
             radioButton.setText(area.getName());
             radioButton.setTag("" + area.getId());
             areaGroup.addView(radioButton);
         }
-        areaGroup.setOnCheckedChangeListener((radioGroup, i) -> {
-            selectedAreaId = Integer.parseInt((String) radioGroup.findViewById(radioGroup.getCheckedRadioButtonId()).getTag());
-        });
-        specGroup.removeAllViews();
-        for (Specialization specialization : getAllSpec()) {
-            RadioButton radioButton = (RadioButton) LayoutInflater.from(this).inflate(R.layout.item_radio, null, false);
-            radioButton.setText(specialization.getName());
-            radioButton.setTag("" + specialization.getId());
-            specGroup.addView(radioButton);
-        }
-        specGroup.setOnCheckedChangeListener((radioGroup, i) -> {
-            selectedSpecId = Integer.parseInt((String) radioGroup.findViewById(radioGroup.getCheckedRadioButtonId()).getTag());
-        });
+
     }
 
     private double calcDistance(Hospital a, double lat, double longi) {

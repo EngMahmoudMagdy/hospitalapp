@@ -50,8 +50,6 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.Holder> im
         Hospital hospital = list.get(position);
         holder.name.setText(hospital.getName());
         holder.address.setText(hospital.getAddress());
-        if (hospital.getArea() != null)
-            holder.area.setText(hospital.getArea().getName());
         holder.itemView.setOnClickListener(v -> {
             //TODO details page
             HospitalDetailsFragment.getInstance(hospital).show(activity.getSupportFragmentManager(),"hospital");
@@ -112,8 +110,6 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.Holder> im
         TextView name;
         @BindView(R.id.address)
         TextView address;
-        @BindView(R.id.area)
-        TextView area;
 
         Holder(@NonNull View itemView) {
             super(itemView);

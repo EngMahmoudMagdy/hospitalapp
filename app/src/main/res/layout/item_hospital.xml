@@ -32,14 +32,6 @@
             android:textColor="@color/black"
             android:textSize="@dimen/text_smallx" />
 
-        <TextView
-            android:id="@+id/area"
-            android:layout_width="wrap_content"
-            android:layout_marginEnd="8dp"
-            android:layout_height="wrap_content"
-            android:textColor="@color/black"
-            android:textSize="@dimen/text_smallx" />
-
     </LinearLayout>
     </LinearLayout>
 

@@ -25,6 +25,8 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
+import static com.hospitalapp.helpers.StaticMembers.*;
+
 public class DrugInterceptionActivity extends AppCompatActivity {
 
 
@@ -76,12 +78,12 @@ public class DrugInterceptionActivity extends AppCompatActivity {
         drug1List.clear();
         drug1List.add(getString(R.string.drug_1));
         drug1List.addAll(StaticMembers.getAllDrugs());
-        drug1Adapter = getSpinnerAdapter(drug1List);
+        drug1Adapter = getSpinnerAdapter(drug1List,this);
         drug1Spinner.setAdapter(drug1Adapter);
         drug2List.clear();
         drug2List.add(getString(R.string.drug_2));
         drug2List.addAll(StaticMembers.getAllDrugs());
-        drug2Adapter = getSpinnerAdapter(drug2List);
+        drug2Adapter = getSpinnerAdapter(drug2List,this);
         drug2Spinner.setAdapter(drug2Adapter);
         drug2Spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -116,53 +118,6 @@ public class DrugInterceptionActivity extends AppCompatActivity {
         }
         if (!f)
             interceptionText.setText(R.string.no_interception);
-    }
-
-    private ArrayAdapter<String> getSpinnerAdapter(List<String> list) {
-        return getSpinnerAdapter(list, true);
-    }
-
-    private ArrayAdapter<String> getSpinnerAdapter(List<String> list, boolean hasHint) {
-        return new ArrayAdapter<String>
-                (this, R.layout.item_list_spinner, android.R.id.text1, list) {
-
-            @NonNull
-            @Override
-            public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-                final View view;
-                final TextView text;
-
-                if (convertView == null) {
-                    view = LayoutInflater.from(getContext()).inflate(R.layout.item_list_spinner, parent, false);
-                } else {
-                    view = convertView;
-                }
-                text = view.findViewById(android.R.id.text1);
-                final String item = getItem(position);
-                text.setText(Html.fromHtml(item));
-                return view;
-            }
-
-            @Override
-            public View getDropDownView(int position, View convertView,
-                                        ViewGroup parent) {
-                View view = super.getDropDownView(position, convertView, parent);
-                TextView tv = view.findViewById(android.R.id.text1);
-                if (hasHint) {
-                    if (position == 0) {
-                        // Set the hint text color gray
-                        tv.setHint(Html.fromHtml(list.get(0)));
-                        tv.setText("");
-                    }
-                }
-                return view;
-            }
-
-            @Override
-            public boolean isEnabled(int position) {
-                return !hasHint || position != 0;
-            }
-        };
     }
 
 }
