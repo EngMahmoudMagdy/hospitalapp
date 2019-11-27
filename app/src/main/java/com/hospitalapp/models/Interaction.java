@@ -4,14 +4,14 @@ import android.util.Pair;
 
 import java.util.Map;
 
-public class Interception {
+public class Interaction {
     Pair<String,String> drugs;
     String description;
 
-    public Interception() {
+    public Interaction() {
     }
 
-    public Interception(Pair<String, String> drugs, String description) {
+    public Interaction(Pair<String, String> drugs, String description) {
         this.drugs = drugs;
         this.description = description;
     }

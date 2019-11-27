@@ -1,26 +1,20 @@
 package com.hospitalapp.activities;
 
 import android.os.Bundle;
-import android.text.Html;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatSpinner;
 import androidx.appcompat.widget.Toolbar;
 
 import com.hospitalapp.R;
 import com.hospitalapp.helpers.StaticMembers;
-import com.hospitalapp.models.Interception;
+import com.hospitalapp.models.Interaction;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -60,7 +54,7 @@ public class DrugInterceptionActivity extends AppCompatActivity {
                     selectedDrug1 = drug1List.get(p);
                     drug2List.clear();
                     drug2List.add(getString(R.string.drug_2));
-                    drug2List.addAll(StaticMembers.getAllDrugs());
+                    drug2List.addAll(StaticMembers.getAllDrugs(getBaseContext()));
                     drug2List.remove(selectedDrug1);
                     drug2Adapter.notifyDataSetChanged();
                     if (!selectedDrug1.equals(selectedDrug2))
@@ -77,12 +71,12 @@ public class DrugInterceptionActivity extends AppCompatActivity {
         });
         drug1List.clear();
         drug1List.add(getString(R.string.drug_1));
-        drug1List.addAll(StaticMembers.getAllDrugs());
+        drug1List.addAll(StaticMembers.getAllDrugs(this));
         drug1Adapter = getSpinnerAdapter(drug1List,this);
         drug1Spinner.setAdapter(drug1Adapter);
         drug2List.clear();
         drug2List.add(getString(R.string.drug_2));
-        drug2List.addAll(StaticMembers.getAllDrugs());
+        drug2List.addAll(StaticMembers.getAllDrugs(this));
         drug2Adapter = getSpinnerAdapter(drug2List,this);
         drug2Spinner.setAdapter(drug2Adapter);
         drug2Spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -109,7 +103,7 @@ public class DrugInterceptionActivity extends AppCompatActivity {
 
     void selectInterception() {
         boolean f = false;
-        for (Interception interception : StaticMembers.getAllInterception()) {
+        for (Interaction interception : StaticMembers.getAllInteractions(this)) {
             if ((interception.getDrugs().first.equals(selectedDrug1) || interception.getDrugs().second.equals(selectedDrug1)) && (interception.getDrugs().first.equals(selectedDrug2) || interception.getDrugs().second.equals(selectedDrug2))) {
                 f = true;
                 interceptionText.setText(interception.getDescription());
