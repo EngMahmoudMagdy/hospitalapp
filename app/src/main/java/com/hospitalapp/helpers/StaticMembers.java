@@ -9,7 +9,6 @@ import android.text.Html;
 import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.util.DisplayMetrics;
-import android.util.Pair;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -24,12 +23,10 @@ import androidx.annotation.Nullable;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
 import com.hospitalapp.R;
 import com.hospitalapp.models.Area;
 import com.hospitalapp.models.Hospital;
-import com.hospitalapp.models.Interception;
-import com.hospitalapp.models.Specialization;
+import com.hospitalapp.models.Interaction;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -218,32 +215,14 @@ public class StaticMembers {
         return getList(jsonString,String.class);
     }
 
-    public static List<Interception> getAllInterception() {
-        List<Interception> list = new ArrayList<>();
-        Interception interception = new Interception(new Pair<>("Panadol 1", "Panadol 2"), "Hello world! 1 2Hello world! Hello world! \nHello world! Hello world! Hello world! \nHello world! Hello world! Hello world! \nHello world! Hello world! Hello world! \nHello world! Hello world! Hello world! \nHello world! Hello world! Hello world! \nHello world! Hello world! Hello world! \n");
-        list.add(interception);
-        interception = new Interception(new Pair<>("Panadol 2", "Panadol 3"), "Hello world! 2 3 Hello world! Hello world! \nHello world! Hello world! Hello world! \nHello world! Hello world! Hello world! \nHello world! Hello world! Hello world! \nHello world! Hello world! Hello world! \nHello world! Hello world! Hello world! \nHello world! Hello world! Hello world! \n");
-        list.add(interception);
-        interception = new Interception(new Pair<>("Panadol 4", "Panadol 3"), "Hello world! 4 3 Hello world! Hello world! \nHello world! Hello world! Hello world! \nHello world! Hello world! Hello world! \nHello world! Hello world! Hello world! \nHello world! Hello world! Hello world! \nHello world! Hello world! Hello world! \nHello world! Hello world! Hello world! \n");
-        list.add(interception);
-        interception = new Interception(new Pair<>("Panadol 4", "Panadol 2"), "Hello world! 4 2 Hello world! Hello world! \nHello world! Hello world! Hello world! \nHello world! Hello world! Hello world! \nHello world! Hello world! Hello world! \nHello world! Hello world! Hello world! \nHello world! Hello world! Hello world! \nHello world! Hello world! Hello world! \n");
-        list.add(interception);
-        interception = new Interception(new Pair<>("Panadol 1", "Panadol 4"), "Hello world! 1 4 Hello world! Hello world! \nHello world! Hello world! Hello world! \nHello world! Hello world! Hello world! \nHello world! Hello world! Hello world! \nHello world! Hello world! Hello world! \nHello world! Hello world! Hello world! \nHello world! Hello world! Hello world! \n");
-        list.add(interception);
-        return list;
+    public static List<Interaction> getAllInteractions(Context context) {
+        String jsonString = readJSONfile(context,R.raw.interactions);
+        return getList(jsonString, Interaction.class);
     }
 
-    public static List<String> getAllDrugs() {
-        List<String> list = new ArrayList<>();
-        String s = "Panadol 1";
-        list.add(s);
-        s = "Panadol 2";
-        list.add(s);
-        s = "Panadol 3";
-        list.add(s);
-        s = "Panadol 4";
-        list.add(s);
-        return list;
+    public static List<String> getAllDrugs(Context context) {
+        String jsonString = readJSONfile(context,R.raw.drugs);
+        return getList(jsonString,String.class);
     }
 
 

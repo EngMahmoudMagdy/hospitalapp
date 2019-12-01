@@ -4,7 +4,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
-import android.os.Environment;
 import android.util.Log;
 import android.widget.Button;
 
@@ -14,17 +13,8 @@ import androidx.core.app.ActivityCompat;
 
 import com.google.android.gms.maps.model.LatLng;
 import com.hospitalapp.R;
-import com.hospitalapp.helpers.PrefManager;
-import com.hospitalapp.helpers.StaticMembers;
-import com.hospitalapp.models.Area;
-import com.hospitalapp.models.Hospital;
-import com.opencsv.CSVReader;
 
-import java.io.File;
-import java.io.FileReader;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Objects;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -51,16 +41,24 @@ public class MainActivity extends AppCompatActivity {
         ButterKnife.bind(this);
         searchButton.setOnClickListener(v -> startActivity(new Intent(this, SearchActivity.class)));
         drugInturruption.setOnClickListener(v -> startActivity(new Intent(this, DrugInterceptionActivity.class)));
-        changeData.setOnClickListener(view -> {
+        /*changeData.setOnClickListener(view -> {
             try {
-                File csvfile = new File(Environment.getExternalStorageDirectory() + "/maadi.csv");
+               *//* File csvfile = new File(Environment.getExternalStorageDirectory() + "/drug drug interactions.csv");
                 CSVReader reader = new CSVReader(new FileReader(csvfile));
-               /* List<String> hospitals = new ArrayList<>();
+                List<Interaction> list = new ArrayList<>();
+                List<String> listDrugs = new ArrayList<>();
+                Interaction interception;
                 while ((nextLine = reader.readNext()) != null) {
-                    hospitals.add(nextLine[0]);
+                    interception = new Interaction(new Pair<>(nextLine[0], nextLine[1]), nextLine[2]);
+                    if (!listDrugs.contains(nextLine[0]))
+                        listDrugs.add(nextLine[0]);
+                    if (!listDrugs.contains(nextLine[1]))
+                        listDrugs.add(nextLine[1]);
+                    list.add(interception);
                 }
-                PrefManager.getInstance(this).setList(StaticMembers.SPEC+12, hospitals);*/
-                List<Hospital> hospitals = new ArrayList<>();
+                PrefManager.getInstance(this).setList(StaticMembers.SPEC + 19, list);
+                PrefManager.getInstance(this).setList(StaticMembers.SPEC + 17, listDrugs);*//*
+               *//* List<Hospital> hospitals = new ArrayList<>();
                 while ((nextLine = reader.readNext()) != null) {
                     LatLng latLng = getLatLngFromExpandedUrl(nextLine[3]);
                     Log.i("CSV", nextLine[0] + " " + nextLine[1] + " " + nextLine[2] + " " + latLng + " ");
@@ -72,12 +70,12 @@ public class MainActivity extends AppCompatActivity {
                             new Area(nextLine[4], Integer.parseInt(nextLine[5])));
                     hospitals.add(hospital);
                 }
-                PrefManager.getInstance(this).setList(StaticMembers.HOSPITALS, hospitals);
+                PrefManager.getInstance(this).setList(StaticMembers.HOSPITALS, hospitals);*//*
             } catch (IOException e) {
                 Log.e("CSV", Objects.requireNonNull(e.getLocalizedMessage()));
                 requestCameraPermission();
             }
-        });
+        });*/
 
     }
 

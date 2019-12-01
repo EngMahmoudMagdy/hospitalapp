@@ -1,0 +1,884 @@
+[
+  {
+    "description": "no warning was found for this selected drug",
+    "drugs": {
+      "first": "ketoprofen ",
+      "second": "Nexium (esomeprazole)"
+    }
+  },
+  {
+    "description": "no warning was found for this selected drug",
+    "drugs": {
+      "first": "ketoprofen ",
+      "second": "omeprazole"
+    }
+  },
+  {
+    "description": "no warning was found for this selected drug",
+    "drugs": {
+      "first": "ketoprofen ",
+      "second": "oxycodone"
+    }
+  },
+  {
+    "description": "no warning was found for this selected drug",
+    "drugs": {
+      "first": "ketoprofen ",
+      "second": "Paracetamol (acetaminophen)"
+    }
+  },
+  {
+    "description": "no warning was found for this selected drug",
+    "drugs": {
+      "first": "ketoprofen ",
+      "second": "Singulair (montelukast)"
+    }
+  },
+  {
+    "description": "no warning was found for this selected drug",
+    "drugs": {
+      "first": "ketoprofen ",
+      "second": "Topamax (topiramate)"
+    }
+  },
+  {
+    "description": "no warning was found for this selected drug",
+    "drugs": {
+      "first": "ketoprofen ",
+      "second": "tramadol"
+    }
+  },
+  {
+    "description": "no warning was found for this selected drug",
+    "drugs": {
+      "first": "ketoprofen ",
+      "second": "Tylenol (acetaminophen)"
+    }
+  },
+  {
+    "description": "no warning was found for this selected drug",
+    "drugs": {
+      "first": "ketoprofen ",
+      "second": "Vitamin B Complex 100 (multivitamin)"
+    }
+  },
+  {
+    "description": "no warning was found for this selected drug",
+    "drugs": {
+      "first": "ketoprofen ",
+      "second": "Vitamin B12 (cyanocobalamin)"
+    }
+  },
+  {
+    "description": "no warning was found for this selected drug",
+    "drugs": {
+      "first": "ketoprofen ",
+      "second": "Vitamin C (ascorbic acid)"
+    }
+  },
+  {
+    "description": "no warning was found for this selected drug",
+    "drugs": {
+      "first": "ketoprofen ",
+      "second": "Vitamin D3 (cholecalciferol)"
+    }
+  },
+  {
+    "description": "no warning was found for this selected drug",
+    "drugs": {
+      "first": "ketoprofen ",
+      "second": "Wellbutrin XL (bupropion)"
+    }
+  },
+  {
+    "description": "no warning was found for this selected drug",
+    "drugs": {
+      "first": "ketoprofen ",
+      "second": "Xanax (alprazolam)"
+    }
+  },
+  {
+    "description": "no warning was found for this selected drug",
+    "drugs": {
+      "first": "ketoprofen ",
+      "second": "Zyrtec (cetirizine)"
+    }
+  },
+  {
+    "description": "no warning was found for this selected drug",
+    "drugs": {
+      "first": "ketoprofen ",
+      "second": "lidocaine"
+    }
+  },
+  {
+    "description": "no warning was found for this selected drug",
+    "drugs": {
+      "first": "ketoprofen ",
+      "second": "Lyrica (pregabalin)"
+    }
+  },
+  {
+    "description": "no warning was found for this selected drug",
+    "drugs": {
+      "first": "ketoprofen ",
+      "second": "Flexeril (cyclobenzaprine) "
+    }
+  },
+  {
+    "description": "no warning was found for this selected drug",
+    "drugs": {
+      "first": "ketoprofen ",
+      "second": "hydrocodone"
+    }
+  },
+  {
+    "description": "no warning was found for this selected drug",
+    "drugs": {
+      "first": "ketoprofen ",
+      "second": "Ambien (zolpidem)"
+    }
+  },
+  {
+    "description": "no warning was found for this selected drug",
+    "drugs": {
+      "first": "ketoprofen ",
+      "second": "acetaminophen"
+    }
+  },
+  {
+    "description": "Combining these medications may increase your risk of developing gastrointestinal ulcers and bleeding. You may need a dose adjustment or more frequent monitoring by your doctor to safely use both medications. ",
+    "drugs": {
+      "first": "ketoprofen ",
+      "second": "Acetylsalicylic Acid (aspirin)  "
+    }
+  },
+  {
+    "description": "Concomitant use of more than one nonsteroidal anti-inflammatory drug (NSAID) at a time may increase the potential for serious gastrointestinal toxicity including inflammation, bleeding, ulceration, and perforation of the esophagus, stomach, or intestines. These events can occur at any time during NSAID use, with or without warning symptoms. The risk is dependent on both dosage and duration of therapy. Patients with a prior history of peptic ulcer disease and/or GI bleeding have a greater than 10-fold increased risk of developing a GI bleed during NSAID use compared to patients without a history. Additional risk factors include old age, alcohol use, smoking, and poor general health status.",
+    "drugs": {
+      "first": "ketoprofen ",
+      "second": "Advil (ibuprofen)"
+    }
+  },
+  {
+    "description": "Combining these medications may increase your risk of developing gastrointestinal ulcers and bleeding. You may need a dose adjustment or more frequent monitoring by your doctor to safely use both medications.",
+    "drugs": {
+      "first": "ketoprofen ",
+      "second": "aspirin "
+    }
+  },
+  {
+    "description": "can lead to serious gastrointestinal toxicity including inflammation, bleeding, ulceration, and perforation. The risk is dependent on both dosage and duration of therapy.",
+    "drugs": {
+      "first": "ketoprofen ",
+      "second": "Celebrex (celecoxib)"
+    }
+  },
+  {
+    "description": "may increase the risk of bleeding. The interaction may be more likely if you are elderly or have kidney or liver disease. ",
+    "drugs": {
+      "first": "ketoprofen ",
+      "second": "Cymbalta (duloxetine)"
+    }
+  },
+  {
+    "description": "Concomitant use of more than one nonsteroidal anti-inflammatory drug (NSAID) at a time may increase the potential for serious gastrointestinal toxicity including inflammation, bleeding, ulceration, and perforation of the esophagus, stomach, or intestines. These events can occur at any time during NSAID use, with or without warning symptoms. The risk is dependent on both dosage and duration of therapy. Patients with a prior history of peptic ulcer disease and/or GI bleeding have a greater than 10-fold increased risk of developing a GI bleed during NSAID use compared to patients without a history. Additional risk factors include old age, alcohol use, smoking, and poor general health status.",
+    "drugs": {
+      "first": "ketoprofen ",
+      "second": "diclofenac "
+    }
+  },
+  {
+    "description": "may rarely increase the risk of bleeding",
+    "drugs": {
+      "first": "ketoprofen ",
+      "second": "Fish Oil (omega-3 polyunsaturated fatty acids)"
+    }
+  },
+  {
+    "description": "increase the risk of bleeding. The interaction may be more likely if you are elderly or have kidney or liver disease",
+    "drugs": {
+      "first": "ketoprofen ",
+      "second": "Lexapro (escitalopram)"
+    }
+  },
+  {
+    "description": "may increase the blood levels and side effects of methotrexate. You may be more likely to experience this interaction if you have kidney disease or are receiving a high dose of methotrexate. The risk may be less if you are using methotrexate once a week to treat certain forms of arthritis",
+    "drugs": {
+      "first": "ketoprofen ",
+      "second": "methotrexate"
+    }
+  },
+  {
+    "description": "may increase side effects such as dizziness, drowsiness, confusion, and difficulty concentrating. Some people, especially the elderly, may also experience impairment in thinking, judgment, and motor coordination. You should avoid or limit the use of alcohol while being treated with these medications. Also avoid activities requiring mental alertness such as driving or operating hazardous machinery until you know how the medications affect you",
+    "drugs": {
+      "first": "Comtrex Allergy Sinus (acetaminophen / chlorpheniramine / pseudoephedrine)  ",
+      "second": "A-Cof DH (guaifenesin / hydrocodone)"
+    }
+  },
+  {
+    "description": "can increase the nervous system side effects of chlorpheniramine such as dizziness, drowsiness, and difficulty concentrating. Some people may also experience impairment in thinking and judgment. You should avoid or limit the use of alcohol while being treated with chlorpheniramine. Do not use more than the recommended dose of chlorpheniramine, and avoid activities requiring mental alertness such as driving or operating hazardous machinery until you know how the medication affects you.",
+    "drugs": {
+      "first": "Comtrex Allergy Sinus (acetaminophen / chlorpheniramine / pseudoephedrine) ",
+      "second": "A-D Anti-Diarrheal (loperamide)"
+    }
+  },
+  {
+    "description": "may increase side effects such as dizziness, drowsiness, confusion, and difficulty concentrating. Some people, especially the elderly, may also experience impairment in thinking, judgment, and motor coordination. You should avoid or limit the use of alcohol while being treated with these medications. Also avoid activities requiring mental alertness such as driving or operating hazardous machinery until you know how the medications affect you",
+    "drugs": {
+      "first": "Comtrex Allergy Sinus (acetaminophen / chlorpheniramine / pseudoephedrine)",
+      "second": "A-G Tussin (chlorpheniramine / hydrocodone / pseudoephedrine)"
+    }
+  },
+  {
+    "description": "may increase side effects such as drowsiness, blurred vision, dry mouth, heat intolerance, flushing, decreased sweating, difficulty urinating, abdominal cramping, constipation, irregular heartbeat, confusion, and memory problems. Side effects may be more likely to occur in the elderly or those with a debilitating condition. You should avoid or limit the use of alcohol while being treated with these medications. Also avoid activities requiring mental alertness such as driving or operating hazardous machinery until you know how the medications affect you",
+    "drugs": {
+      "first": "Comtrex Allergy Sinus (acetaminophen / chlorpheniramine / pseudoephedrine)  ",
+      "second": "A-Phedrin (pseudoephedrine / triprolidine)"
+    }
+  },
+  {
+    "description": "may increase side effects such as drowsiness, blurred vision, dry mouth, heat intolerance, flushing, decreased sweating, difficulty urinating, abdominal cramping, constipation, irregular heartbeat, confusion, and memory problems. Side effects may be more likely to occur in the elderly or those with a debilitating condition. You should avoid or limit the use of alcohol while being treated with these medications. Also avoid activities requiring mental alertness such as driving or operating hazardous machinery until you know how the medications affect you.",
+    "drugs": {
+      "first": "Comtrex Allergy Sinus (acetaminophen / chlorpheniramine / pseudoephedrine) ",
+      "second": "A-Spas S / L (hyoscyamine) "
+    }
+  },
+  {
+    "description": "may increase side effects such as drowsiness, blurred vision, dry mouth, heat intolerance, flushing, decreased sweating, difficulty urinating, abdominal cramping, constipation, irregular heartbeat, confusion, and memory problems. Side effects may be more likely to occur in the elderly or those with a debilitating condition. You should avoid or limit the use of alcohol while being treated with these medications. Also avoid activities requiring mental alertness such as driving or operating hazardous machinery until you know how the medications affect you. ",
+    "drugs": {
+      "first": "Comtrex Allergy Sinus (acetaminophen / chlorpheniramine / pseudoephedrine)",
+      "second": "A-Tan 12X (guaifenesin / phenylephrine / pyrilamine) "
+    }
+  },
+  {
+    "description": " can increase the nervous system side effects of chlorpheniramine such as dizziness, drowsiness, and difficulty concentrating. Some people may also experience impairment in thinking and judgment. You should avoid or limit the use of alcohol while being treated with chlorpheniramine. ",
+    "drugs": {
+      "first": "Comtrex Allergy Sinus (acetaminophen / chlorpheniramine / pseudoephedrine)  ",
+      "second": "abacavir / lamivudine / zidovudine "
+    }
+  },
+  {
+    "description": " may increase side effects such as dizziness, drowsiness, confusion, and difficulty concentrating. Some people, especially the elderly, may also experience impairment in thinking, judgment, and motor coordination. You should avoid or limit the use of alcohol while being treated with these medications. Also avoid activities requiring mental alertness such as driving or operating hazardous machinery until you know how the medications affect you.",
+    "drugs": {
+      "first": "Comtrex Allergy Sinus (acetaminophen / chlorpheniramine / pseudoephedrine) ",
+      "second": "Abatuss DMX (dexchlorpheniramine / dextromethorphan / pseudoephedrine) "
+    }
+  },
+  {
+    "description": " may increase side effects such as drowsiness, blurred vision, dry mouth, heat intolerance, flushing, decreased sweating, difficulty urinating, abdominal cramping, constipation, irregular heartbeat, confusion, and memory problems. Side effects may be more likely to occur in the elderly or those with a debilitating condition. You should avoid or limit the use of alcohol while being treated with these medications. Also avoid activities requiring mental alertness such as driving or operating hazardous machinery until you know how the medications affect you.",
+    "drugs": {
+      "first": "Comtrex Allergy Sinus (acetaminophen / chlorpheniramine / pseudoephedrine)",
+      "second": "Abilify (aripiprazole) "
+    }
+  },
+  {
+    "description": "may interfere with blood glucose control and reduce the effectiveness of acarbose and other diabetic medications. Monitor your blood sugar levels closely. You may need a dose adjustment of your diabetic medications during and after treatment with pseudoephedrine",
+    "drugs": {
+      "first": "Comtrex Allergy Sinus (acetaminophen / chlorpheniramine / pseudoephedrine)  ",
+      "second": "acarbose"
+    }
+  },
+  {
+    "description": "  may cause an increase in blood pressure.",
+    "drugs": {
+      "first": "Comtrex Allergy Sinus (acetaminophen / chlorpheniramine / pseudoephedrine) ",
+      "second": "acebutolol "
+    }
+  },
+  {
+    "description": "may interfere with blood glucose control and reduce the effectiveness of acetoHEXAMIDE and other diabetic medications.",
+    "drugs": {
+      "first": "Comtrex Allergy Sinus (acetaminophen / chlorpheniramine / pseudoephedrine)",
+      "second": "acetohexamide"
+    }
+  },
+  {
+    "description": "may interfere with blood glucose control and reduce the effectiveness of albiglutide and other diabetic medications",
+    "drugs": {
+      "first": "Comtrex Allergy Sinus (acetaminophen / chlorpheniramine / pseudoephedrine)  ",
+      "second": "albiglutide"
+    }
+  },
+  {
+    "description": "may increase cardiovascular side effects such as elevations in heart rate and blood pressure or irregular heart rhythm. ",
+    "drugs": {
+      "first": "Comtrex Allergy Sinus (acetaminophen / chlorpheniramine / pseudoephedrine) ",
+      "second": "albuterol"
+    }
+  },
+  {
+    "description": "may cause an increase in blood pressure",
+    "drugs": {
+      "first": "Comtrex Allergy Sinus (acetaminophen / chlorpheniramine / pseudoephedrine)",
+      "second": "alfuzosin"
+    }
+  },
+  {
+    "description": "may interfere with blood glucose control and reduce the effectiveness of alogliptin and other diabetic medications. ",
+    "drugs": {
+      "first": "Comtrex Allergy Sinus (acetaminophen / chlorpheniramine / pseudoephedrine)  ",
+      "second": "alogliptin "
+    }
+  },
+  {
+    "description": "no warning was found for this selected drug ",
+    "drugs": {
+      "first": "Comtrex Allergy Sinus (acetaminophen / chlorpheniramine / pseudoephedrine) ",
+      "second": "ammonium chloride"
+    }
+  },
+  {
+    "description": "can increase blood pressure and heart rate, and combining them may enhance these effects. Talk to your doctor before using these medications, especially if you have a history of high blood pressure or heart disease. You may need a dose adjustment or more frequent monitoring by your doctor to safely use both medications.",
+    "drugs": {
+      "first": "Comtrex Allergy Sinus (acetaminophen / chlorpheniramine / pseudoephedrine)",
+      "second": "amphetamine "
+    }
+  },
+  {
+    "description": " may increase cardiovascular side effects such as elevations in heart rate and blood pressure or irregular heart rhythm.",
+    "drugs": {
+      "first": "Comtrex Allergy Sinus (acetaminophen / chlorpheniramine / pseudoephedrine)  ",
+      "second": "arformoterol"
+    }
+  },
+  {
+    "description": "no warning was found for this selected drug ",
+    "drugs": {
+      "first": "Comtrex Allergy Sinus (acetaminophen / chlorpheniramine / pseudoephedrine) ",
+      "second": "ascorbic acid"
+    }
+  },
+  {
+    "description": "may cause an increase in blood pressure. ",
+    "drugs": {
+      "first": "Comtrex Allergy Sinus (acetaminophen / chlorpheniramine / pseudoephedrine)",
+      "second": "atenolol "
+    }
+  },
+  {
+    "description": "can increase blood pressure and heart rate, and combining them may enhance these effects",
+    "drugs": {
+      "first": "Comtrex Allergy Sinus (acetaminophen / chlorpheniramine / pseudoephedrine)  ",
+      "second": "benzphetamine"
+    }
+  },
+  {
+    "description": "may cause an increase in blood pressure.",
+    "drugs": {
+      "first": "Comtrex Allergy Sinus (acetaminophen / chlorpheniramine / pseudoephedrine) ",
+      "second": "betaxolol"
+    }
+  },
+  {
+    "description": "may cause an increase in blood pressure. ",
+    "drugs": {
+      "first": "Comtrex Allergy Sinus (acetaminophen / chlorpheniramine / pseudoephedrine)",
+      "second": "bisoprolol "
+    }
+  },
+  {
+    "description": "may increase cardiovascular side effects such as elevations in heart rate and blood pressure or irregular heart rhythm",
+    "drugs": {
+      "first": "Comtrex Allergy Sinus (acetaminophen / chlorpheniramine / pseudoephedrine)  ",
+      "second": "bitolterol"
+    }
+  },
+  {
+    "description": "increase your risk of developing gastrointestinal ulcers and bleeding.severe abdominal pain, bloating, sudden dizziness or lightheadedness, nausea, vomiting (especially with blood), loss of appetite.",
+    "drugs": {
+      "first": "aspirin  ",
+      "second": "celecoxib"
+    }
+  },
+  {
+    "description": "increase your risk of developing gastrointestinal ulcers and bleeding.severe abdominal pain, bloating, sudden dizziness or lightheadedness, nausea, vomiting (especially with blood), loss of appetite.",
+    "drugs": {
+      "first": "aspirin  ",
+      "second": "meloxicam"
+    }
+  },
+  {
+    "description": "reduce the effectiveness of aspirin",
+    "drugs": {
+      "first": "aspirin",
+      "second": "naproxen  "
+    }
+  },
+  {
+    "description": "May affect on your kidney ",
+    "drugs": {
+      "first": "aspirin",
+      "second": "lisinopril"
+    }
+  },
+  {
+    "description": "cause you to bleed more easily. ",
+    "drugs": {
+      "first": "aspirin",
+      "second": "warfarin  "
+    }
+  },
+  {
+    "description": "increase the risk of bleeding, including severe",
+    "drugs": {
+      "first": "aspirin  ",
+      "second": "rivaroxaban"
+    }
+  },
+  {
+    "description": "increase the risk of bleeding. ",
+    "drugs": {
+      "first": "ibuprofen  ",
+      "second": "DULoxetine"
+    }
+  },
+  {
+    "description": "inflammation, bleeding, ulceration, and perforation of the esophagus, stomach, or intestines",
+    "drugs": {
+      "first": "ibuprofen  ",
+      "second": "meloxicam"
+    }
+  },
+  {
+    "description": "increase the risk of bleeding. The interaction may be more likely if you are elderly or have kidney or liver disease.",
+    "drugs": {
+      "first": "ibuprofen  ",
+      "second": "sertraline"
+    }
+  },
+  {
+    "description": "cause central nervous system depression can lead to serious side effects including respiratory distress, coma, and even death.",
+    "drugs": {
+      "first": "codeine  ",
+      "second": "LORazepam"
+    }
+  },
+  {
+    "description": "alter the effects of both medications",
+    "drugs": {
+      "first": "Congestac (guaifenesin/pseudoephedrine) ",
+      "second": "bromocriptine "
+    }
+  },
+  {
+    "description": "may interfere with blood glucose control and reduce the effectiveness of canagliflozin and other diabetic medications.",
+    "drugs": {
+      "first": "Congestac (guaifenesin/pseudoephedrine) ",
+      "second": "canagliflozin "
+    }
+  },
+  {
+    "description": "may cause an increase in blood pressure. Contact your doctor if your condition changes.",
+    "drugs": {
+      "first": "Congestac (guaifenesin/pseudoephedrine) ",
+      "second": "carvedilol "
+    }
+  },
+  {
+    "description": "may interfere with blood glucose control and reduce the effectiveness of chlorproPAMIDE and other diabetic medications",
+    "drugs": {
+      "first": "Congestac (guaifenesin/pseudoephedrine) ",
+      "second": "chlorpropamide "
+    }
+  },
+  {
+    "description": "no warning was found for this selected drug",
+    "drugs": {
+      "first": "omega-3 polyunsaturated fatty acids",
+      "second": "Coenzyme Q10 (ubiquinone)"
+    }
+  },
+  {
+    "description": "no warning was found for this selected drug",
+    "drugs": {
+      "first": "omega-3 polyunsaturated fatty acids",
+      "second": "CoQ10 (ubiquinone) "
+    }
+  },
+  {
+    "description": " no warning was found for this selected drug",
+    "drugs": {
+      "first": "omega-3 polyunsaturated fatty acids",
+      "second": "Crestor (rosuvastatin)"
+    }
+  },
+  {
+    "description": "no warning was found for this selected drug",
+    "drugs": {
+      "first": "omega-3 polyunsaturated fatty acids",
+      "second": "Crestor (rosuvastatin)"
+    }
+  },
+  {
+    "description": "no warning was found for this selected drug",
+    "drugs": {
+      "first": "omega-3 polyunsaturated fatty acids",
+      "second": "Cymbalta (duloxetine)"
+    }
+  },
+  {
+    "description": "no warning was found for this selected drug",
+    "drugs": {
+      "first": "omega-3 polyunsaturated fatty acids",
+      "second": "Lipitor (atorvastatin)"
+    }
+  },
+  {
+    "description": "no warning was found for this selected drug",
+    "drugs": {
+      "first": "omega-3 polyunsaturated fatty acids",
+      "second": " Lyrica (pregabalin)"
+    }
+  },
+  {
+    "description": " no warning was found for this selected drug",
+    "drugs": {
+      "first": "omega-3 polyunsaturated fatty acids",
+      "second": "Nexium (esomeprazole)"
+    }
+  },
+  {
+    "description": "no warning was found for this selected drug",
+    "drugs": {
+      "first": "omega-3 polyunsaturated fatty acids",
+      "second": "Singulair (montelukast)"
+    }
+  },
+  {
+    "description": "no warning was found for this selected drug",
+    "drugs": {
+      "first": "omega-3 polyunsaturated fatty acids",
+      "second": "Synthroid (levothyroxine)"
+    }
+  },
+  {
+    "description": "no warning was found for this selected drug",
+    "drugs": {
+      "first": "omega-3 polyunsaturated fatty acids",
+      "second": "Tylenol (acetaminophen)"
+    }
+  },
+  {
+    "description": "no warning was found for this selected drug",
+    "drugs": {
+      "first": "omega-3 polyunsaturated fatty acids",
+      "second": "Vitamin C (ascorbic acid)"
+    }
+  },
+  {
+    "description": "no warning was found for this selected drug",
+    "drugs": {
+      "first": "omega-3 polyunsaturated fatty acids",
+      "second": "Vitamin D2 (ergocalciferol)"
+    }
+  },
+  {
+    "description": "no warning was found for this selected drug",
+    "drugs": {
+      "first": "omega-3 polyunsaturated fatty acids",
+      "second": "Vitamin D3 (cholecalciferol)"
+    }
+  },
+  {
+    "description": "no warning was found for this selected drug",
+    "drugs": {
+      "first": "omega-3 polyunsaturated fatty acids",
+      "second": " Xanax (alprazolam)"
+    }
+  },
+  {
+    "description": "no warning was found for this selected drug",
+    "drugs": {
+      "first": "omega-3 polyunsaturated fatty acids",
+      "second": " Zyrtec (cetirizine)"
+    }
+  },
+  {
+    "description": "Aspirin Low Strength (aspirin)  increase the risk of bleeding when combined with other medications that can also cause bleeding such as aspirin. You should seek immediate medical attention if you experience any unusual bleeding or bruising, or have other signs and symptoms of bleeding such as dizziness; lightheadedness; red or black, tarry stools; coughing up or vomiting fresh or dried blood that looks like coffee grounds; severe headache; and weakness.",
+    "drugs": {
+      "first": "omega-3 polyunsaturated fatty acids",
+      "second": "Aspirin"
+    }
+  },
+  {
+    "description": "increasing your risk of developing gastrointestinal ulcers and bleeding.",
+    "drugs": {
+      "first": "Cataflam",
+      "second": "aspirin "
+    }
+  },
+  {
+    "description": "No warnings were found for your selected drugs.",
+    "drugs": {
+      "first": "Cataflam ",
+      "second": "Paracetemol "
+    }
+  },
+  {
+    "description": "increase the potential for serious gastrointestinal toxicity including inflammation, bleeding, ulceration, and perforation of the esophagus, stomach, or intestines.",
+    "drugs": {
+      "first": "Cataflam ",
+      "second": "Ibuprofen "
+    }
+  },
+  {
+    "description": "No warnings were found for your selected drugs.",
+    "drugs": {
+      "first": "Cataflam ",
+      "second": "voltaren "
+    }
+  },
+  {
+    "description": "No warnings were found for your selected drugs.",
+    "drugs": {
+      "first": "Cataflam ",
+      "second": "panadol"
+    }
+  },
+  {
+    "description": "increase the potential for serious gastrointestinal toxicity including inflammation, bleeding, ulceration, and perforation of the esophagus, stomach, or intestines.",
+    "drugs": {
+      "first": "voltaren",
+      "second": "Ibuprofen "
+    }
+  },
+  {
+    "description": "bleeding, including severe and sometimes fatal hemorrhage.",
+    "drugs": {
+      "first": "voltaren",
+      "second": "apixen"
+    }
+  },
+  {
+    "description": "risk of developing gastrointestinal ulcers and bleeding.",
+    "drugs": {
+      "first": "voltaren",
+      "second": "aspirin "
+    }
+  },
+  {
+    "description": "No warnings were found for your selected drugs.",
+    "drugs": {
+      "first": "voltaren",
+      "second": "codiene "
+    }
+  },
+  {
+    "description": "No warnings were found for your selected drugs.",
+    "drugs": {
+      "first": "Panadol ",
+      "second": "Augmentin "
+    }
+  },
+  {
+    "description": "No warnings were found for your selected drugs.",
+    "drugs": {
+      "first": "Panadol ",
+      "second": "asprin"
+    }
+  },
+  {
+    "description": "No warnings were found for your selected drugs.",
+    "drugs": {
+      "first": "Panadol ",
+      "second": "ibuprofen "
+    }
+  },
+  {
+    "description": "No warnings were found for your selected drugs.",
+    "drugs": {
+      "first": "Panadol ",
+      "second": "Oxycodene"
+    }
+  },
+  {
+    "description": "No warnings were found for your selected drugs.",
+    "drugs": {
+      "first": "Adrenaline ",
+      "second": "Paracetemol "
+    }
+  },
+  {
+    "description": "stomach ulcer, fluid retention, high blood pressure, bleeding, and liver or kidney problems.",
+    "drugs": {
+      "first": "Diclofenac",
+      "second": "diclofenca optical"
+    }
+  },
+  {
+    "description": "bleeding",
+    "drugs": {
+      "first": "Diclofenac",
+      "second": "aspirin "
+    }
+  },
+  {
+    "description": "gastrointestinal ulcers and bleeding",
+    "drugs": {
+      "first": "celecoxib",
+      "second": "aspirin "
+    }
+  },
+  {
+    "description": "     gastrointestinal toxicity including inflammation, bleeding, ulceration, and perforation.",
+    "drugs": {
+      "first": "celecoxib",
+      "second": "Ibuprofen "
+    }
+  },
+  {
+    "description": "No warnings were found for your selected drugs.",
+    "drugs": {
+      "first": "celecoxib",
+      "second": "panadol"
+    }
+  },
+  {
+    "description": "No warnings were found for your selected drugs.",
+    "drugs": {
+      "first": "celecoxib",
+      "second": "Paracetemol "
+    }
+  },
+  {
+    "description": "Celecoxib may reduce the effectiveness of codeine",
+    "drugs": {
+      "first": "celecoxib",
+      "second": "codiene "
+    }
+  },
+  {
+    "description": "     Celecoxib may increase the blood levels and effects of morphine.",
+    "drugs": {
+      "first": "celecoxib",
+      "second": "morphine "
+    }
+  },
+  {
+    "description": "no warning was found for this selected drug",
+    "drugs": {
+      "first": "Sumatriptan",
+      "second": "Benadryl "
+    }
+  },
+  {
+    "description": "No warnings were found for your selected drugs.",
+    "drugs": {
+      "first": "Sumatriptan",
+      "second": "Fish oil"
+    }
+  },
+  {
+    "description": "No warnings were found for your selected drugs.",
+    "drugs": {
+      "first": "Sumatriptan",
+      "second": "Flexiril"
+    }
+  },
+  {
+    "description": "No warnings were found for your selected drugs.",
+    "drugs": {
+      "first": "Sumatriptan",
+      "second": "Flonase "
+    }
+  },
+  {
+    "description": "No warnings were found for your selected drugs.",
+    "drugs": {
+      "first": "Sumatriptan",
+      "second": "Ibuprofen "
+    }
+  },
+  {
+    "description": "No warnings were found for your selected drugs.",
+    "drugs": {
+      "first": "Sumatriptan",
+      "second": "Naproxen "
+    }
+  },
+  {
+    "description": "No warnings were found for your selected drugs.",
+    "drugs": {
+      "first": "Sumatriptan",
+      "second": "predinisone "
+    }
+  },
+  {
+    "description": "No warnings were found for your selected drugs.",
+    "drugs": {
+      "first": "Sumatriptan",
+      "second": "Albeterul "
+    }
+  },
+  {
+    "description": "No warnings were found for your selected drugs.",
+    "drugs": {
+      "first": "Sumatriptan",
+      "second": "Tylenol"
+    }
+  },
+  {
+    "description": "No warnings were found for your selected drugs.",
+    "drugs": {
+      "first": "Sumatriptan",
+      "second": "Vitamine B12"
+    }
+  },
+  {
+    "description": "No warnings were found for your selected drugs.",
+    "drugs": {
+      "first": "Sumatriptan",
+      "second": "Vitamine C"
+    }
+  },
+  {
+    "description": "No warnings were found for your selected drugs.",
+    "drugs": {
+      "first": "Sumatriptan",
+      "second": "Vitamine D3"
+    }
+  },
+  {
+    "description": "Stop aspirin activity \nAffect on digestive system.\n prevent heart attacks\n\n",
+    "drugs": {
+      "first": "ibuprofen  ",
+      "second": "aspirin"
+    }
+  },
+  {
+    "description": "increase the risk of bleeding. ",
+    "drugs": {
+      "first": "ibuprofen  ",
+      "second": "DULoxetine"
+    }
+  },
+  {
+    "description": "affect your body\u0027s ability to make clots.",
+    "drugs": {
+      "first": "Pradaxa",
+      "second": "Panadol"
+    }
+  },
+  {
+    "description": "cause central nervous system depression can lead to serious side effects including respiratory distress, coma, and even death.",
+    "drugs": {
+      "first": "codeine  ",
+      "second": "Lorazepam"
+    }
+  },
+  {
+    "description": "cause central nervous system depression.",
+    "drugs": {
+      "first": "morphine",
+      "second": "methadone"
+    }
+  },
+  {
+    "description": "alcholism,liver diseases",
+    "drugs": {
+      "first": "paracetamol",
+      "second": "Tylenol (acetaminophen)"
+    }
+  }
+]
