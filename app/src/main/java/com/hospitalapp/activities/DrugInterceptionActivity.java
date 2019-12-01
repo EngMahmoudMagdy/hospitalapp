@@ -53,7 +53,7 @@ public class DrugInterceptionActivity extends AppCompatActivity {
 
         drug1List = new ArrayList<>();
         drug2List = new ArrayList<>();
-        drug1Spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {p
+        drug1Spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int p, long id) {
                 if (p > 0) {
