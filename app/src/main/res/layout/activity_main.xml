@@ -6,6 +6,13 @@
     android:layout_height="match_parent"
     tools:context=".activities.MainActivity">
 
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha=".5"
+        android:scaleType="centerCrop"
+        android:src="@drawable/back_med1" />
+
     <Button
         android:id="@+id/searchButton"
         style="@style/Widget.AppCompat.Button.Borderless.Colored"
