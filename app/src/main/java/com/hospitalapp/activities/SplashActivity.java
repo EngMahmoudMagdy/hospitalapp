@@ -24,29 +24,6 @@ public class SplashActivity extends AppCompatActivity {
                         i = new Intent(getBaseContext(), MainActivity.class);
                         startActivity(i);
                         finish();
-
-                       /* try {
-                            OkHttpClient client = new OkHttpClient();
-                            final Request request = new Request.Builder()
-                                    .url("https://zari.spreago.com/update")
-                                    .addHeader("Authorization", "Bearer " + PrefManager.getInstance(getBaseContext()).getAPIToken())
-                                    .get()
-                                    .build();
-                            client.newCall(request).enqueue(new Callback() {
-                                @Override
-                                public void onFailure(@NotNull Call call, @NotNull IOException e) {
-
-                                }
-
-                                @Override
-                                public void onResponse(@NotNull Call call, @NotNull Response response) throws IOException {
-
-                                }
-                            });
-                        } catch (Exception e) {
-
-                        }*/
-
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
