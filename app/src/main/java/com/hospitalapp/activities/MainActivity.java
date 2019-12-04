@@ -17,8 +17,6 @@ public class MainActivity extends AppCompatActivity {
     Button searchButton;
     @BindView(R.id.drugInturruption)
     Button drugInturruption;
-    @BindView(R.id.changeData)
-    Button changeData;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
