@@ -5,6 +5,12 @@
     android:layout_height="match_parent"
     android:background="@android:color/white">
 
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/back_med1" />
+
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -56,11 +62,12 @@
                 android:layout_height="wrap_content"
                 android:autoLink="phone"
                 android:clickable="true"
-                android:text="@string/phones"
                 android:focusable="true"
                 android:linksClickable="true"
+                android:text="@string/phones"
                 android:textColor="@color/black"
                 android:textSize="@dimen/text_smallx" />
+
             <TextView
                 android:id="@+id/phones"
                 android:layout_width="match_parent"

@@ -6,6 +6,13 @@
     android:layout_height="match_parent"
     tools:context=".activities.DrugInterceptionActivity">
 
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha=".6"
+        android:scaleType="centerCrop"
+        android:src="@drawable/back_med2" />
+
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
